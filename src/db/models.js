@@ -5,7 +5,9 @@ let db;
 if (process.env.NODE_ENV == 'testing') {
   db = new Sequelize({
     dialect: 'sqlite',
-    storage: __dirname + '/../../test/test.db'
+    // storage: __dirname + '/../../test/test.db'
+    // this line was giving workflow errors
+    storage: ':memory:'
   })
 } else {
   db = new Sequelize({
