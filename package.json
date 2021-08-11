@@ -1,0 +1,24 @@
+{
+  "name": "4_social_media_project",
+  "version": "1.0.0",
+  "description": "```shell\r $ mysql -u root\r ```",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "set NODE_ENV=testing& mocha test/setup.js test/**/*.test.js",
+    "cover": "nyc --reporter=lcov npm run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.5",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3",
+    "nyc": "^15.1.0"
+  }
+}
