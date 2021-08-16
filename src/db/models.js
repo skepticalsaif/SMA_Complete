@@ -2,14 +2,15 @@ const Sequelize = require('sequelize')
 
 let db;
 
-if (process.env.NODE_ENV == 'testing') {
-  db = new Sequelize({
-    dialect: 'sqlite',
-    // storage: __dirname + '/../../test/test.db'
-    // this line was giving workflow errors
-    storage: ':memory:'
-  })
-} else if (process.env.DATABASE_URL) {
+// if (process.env.NODE_ENV == 'testing') {
+//   db = new Sequelize({
+//     dialect: 'sqlite',
+//     // storage: __dirname + '/../../test/test.db'
+//     // this line was giving workflow errors
+//     storage: ':memory:'
+//   })
+// } else 
+if (process.env.DATABASE_URL) {
   db = new Sequelize({
     dialect: 'postgres',
     dialectOptions: {
@@ -24,14 +25,15 @@ if (process.env.NODE_ENV == 'testing') {
     password: '7f95e6b861db8ad88f880abcf79da614540aa2e44f96198c778b7a31d6cea8da',
     host: 'ec2-35-174-122-153.compute-1.amazonaws.com'
   })
-} else {
-  db = new Sequelize({
-    dialect: 'mysql',
-    database: 'socialmediadb1',
-    username: 'socialmediauser1',
-    password: 'socialmediapass'
-  })
 }
+// else {
+//   db = new Sequelize({
+//     dialect: 'mysql',
+//     database: 'socialmediadb1',
+//     username: 'socialmediauser1',
+//     password: 'socialmediapass'
+//   })
+// }
 
 // table attribute definitions
 const COL_ID_DEF = {
