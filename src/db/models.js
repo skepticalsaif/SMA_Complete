@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 
-let db;
+// let db;
 
 // if (process.env.NODE_ENV == 'testing') {
 //   db = new Sequelize({
@@ -10,22 +10,22 @@ let db;
 //     storage: ':memory:'
 //   })
 // } else 
-if (process.env.DATABASE_URL) {
-  db = new Sequelize({
-    dialect: 'postgres',
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    },
-    database: 'd6ik1asihstlen',
-    port: 5432,
-    username: 'zkczymwcgpoamj',
-    password: '7f95e6b861db8ad88f880abcf79da614540aa2e44f96198c778b7a31d6cea8da',
-    host: 'ec2-35-174-122-153.compute-1.amazonaws.com'
-  })
-}
+// if (process.env.DATABASE_URL) {
+const db = new Sequelize({
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    }
+  },
+  database: 'd6ik1asihstlen',
+  port: 5432,
+  username: 'zkczymwcgpoamj',
+  password: '7f95e6b861db8ad88f880abcf79da614540aa2e44f96198c778b7a31d6cea8da',
+  host: 'ec2-35-174-122-153.compute-1.amazonaws.com'
+})
+// }
 // else {
 //   db = new Sequelize({
 //     dialect: 'mysql',
