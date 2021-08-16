@@ -18,11 +18,11 @@ if (process.env.NODE_ENV == 'testing') {
         rejectUnauthorized: false
       }
     },
-    database: '',
+    database: 'd6ik1asihstlen',
     port: 5432,
-    username: '',
-    password: '',
-    host: ''
+    username: 'zkczymwcgpoamj',
+    password: '7f95e6b861db8ad88f880abcf79da614540aa2e44f96198c778b7a31d6cea8da',
+    host: 'ec2-35-174-122-153.compute-1.amazonaws.com'
   })
 } else {
   db = new Sequelize({
