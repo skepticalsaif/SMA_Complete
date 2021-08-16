@@ -34,7 +34,7 @@ const COL_TITLE_DEF = {
   allowNull: false
 }
 
-// sequelize automatically pluralises the table name i.e (User => Users)
+// sequelize automatically pluralizes the table name i.e (User => Users)
 const Users = db.define('user', {
   id: COL_ID_DEF,
   username: COL_USERNAME_DEF
