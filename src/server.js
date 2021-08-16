@@ -1,4 +1,5 @@
 const express = require('express')
+const port = process.env.PORT
 
 // this is done because if db doesn't work then theirs 
 // no point in running server.js
@@ -16,7 +17,7 @@ app.use('/', express.static(__dirname + '/public'))
 
 db.sync()  // {force: true} is to be used only during production
   .then(() => {
-    app.listen(8383, () => {
+    app.listen(port, () => {
       console.log('Server started on http://localhost:8383')
     })
   })

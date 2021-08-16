@@ -9,6 +9,21 @@ if (process.env.NODE_ENV == 'testing') {
     // this line was giving workflow errors
     storage: ':memory:'
   })
+} else if (process.env.DATABASE_URL) {
+  db = new Sequelize({
+    dialect: 'postgres',
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    },
+    database: '',
+    port: 5432,
+    username: '',
+    password: '',
+    host: ''
+  })
 } else {
   db = new Sequelize({
     dialect: 'mysql',
