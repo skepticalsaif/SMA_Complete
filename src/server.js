@@ -15,7 +15,7 @@ app.use('/api/users', usersRoute)
 app.use('/api/posts', postsRoute)
 app.use('/', express.static(__dirname + '/public'))
 
-db.sync()  // {force: true} is to be used only during production
+db.sync({ force: true })  // {force: true} is to be used only during production
   .then(() => {
     app.listen(port, () => {
       console.log('Server started on http://localhost:8383')
