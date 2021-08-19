@@ -5,16 +5,16 @@ $(() => {
   $('#content').load('components/all-posts.html')  // this contains it's own scripts too
 
   // loginIfNeeded() not here, because if this function gets loaded before the upper .html files then no output will be produced,
-  // but if it is provided as a callback after navbar.html then it will be loaded only after navbar.html has loaded and no aync problems will arise.
+  // but if it is provided as a callback after navbar.html then it will be loaded only after navbar.html has loaded and no async problems will arise.
   // refer to [ .load() ] function of jQuery for more info.
   // loginIfNeeded is provided as a complete parameter in above function.
 
 })
 
 function loginIfNeeded() {
-  // setting the currentUser varibale as window.currentUser instead of let currentUser makes this variable 
+  // setting the currentUser variable as window.currentUser instead of let currentUser makes this variable 
   // available as an object in the browser console
-  // this could make this varibale available to other functions
+  // this could make this variable available to other functions
   window.currentUser = window.localStorage.user ? JSON.parse(window.localStorage.user) : null
   if (!currentUser) {
 
